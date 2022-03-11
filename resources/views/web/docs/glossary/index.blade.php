@@ -14,5 +14,5 @@
     </div>
 
 @include('web.docs.glossary.content')
-
+@include('web.include.script-lib.updateOpoParams')
 @endsection

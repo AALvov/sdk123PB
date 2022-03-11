@@ -12,6 +12,7 @@
     <script src="{{asset('js/jquery/jquery-ui.js')}}"></script>
     @endpush
 
+
 <script src="<?php echo e(asset('/calendarEvents/datetimepicker/moment-with-locales.min.js')); ?>"></script>
 
 <script language="JavaScript">
@@ -443,15 +444,15 @@
                                                 y = data[data.length - 1][1];
                                             series.addPoint([x, y], true, true);
                                             old_date = data[data.length-1][0];
-                                            series.color = colors_charts(data[0][1]);
+                                            series.color = colors_charts(data[data.length-1][1]);
                                             series.redraw();
-                                            // console.log('Внутри');
+                                             console.log('Обновил');
                                         }
 
                                     }
 
                                 });
-                            }, 60000);
+                            }, 6000);
                         }
                     }
                 },

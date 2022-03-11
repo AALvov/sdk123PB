@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ref_opo extends Model
 {
     protected $table = 'ref_opo';
-    public $timestamps = true;
+    public $timestamps = false;
     public $primaryKey = 'idOPO';
     protected $fillable = [
         'descOPO', 'regNumOPO', 'dateReg', 'classHazard', 'fullDescOPO', 'flDel', 'dateMode', 'login',

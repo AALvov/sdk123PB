@@ -54,4 +54,5 @@
 
 
 
+    @include('web.include.script-lib.updateOpoParams')
 @endsection

@@ -14,5 +14,6 @@
     </div>
 
 @include('web.docs.matrix.events.content')
+@include('web.include.script-lib.updateOpoParams')
 
 @endsection

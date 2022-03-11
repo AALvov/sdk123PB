@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="do" type="doType"/>
+  <xs:complexType name="factors1Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors2Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors3Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors4Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors5Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors6Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors7Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors8Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors9Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors10Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors11Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors12Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors13Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors14Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors15Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors16Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors17Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors18Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors19Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factors20Type">
+    <xs:sequence>
+      <xs:element type="xs:string" name="Name_factor"/>
+      <xs:element type="xs:string" name="IP_factor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="factorsType">
+    <xs:sequence>
+      <xs:element type="factors1Type" name="factors1"/>
+      <xs:element type="factors2Type" name="factors2"/>
+      <xs:element type="factors3Type" name="factors3"/>
+      <xs:element type="factors4Type" name="factors4"/>
+      <xs:element type="factors5Type" name="factors5"/>
+      <xs:element type="factors6Type" name="factors6"/>
+      <xs:element type="factors7Type" name="factors7"/>
+      <xs:element type="factors8Type" name="factors8"/>
+      <xs:element type="factors9Type" name="factors9"/>
+      <xs:element type="factors10Type" name="factors10"/>
+      <xs:element type="factors11Type" name="factors11"/>
+      <xs:element type="factors12Type" name="factors12"/>
+      <xs:element type="factors13Type" name="factors13"/>
+      <xs:element type="factors14Type" name="factors14"/>
+      <xs:element type="factors15Type" name="factors15"/>
+      <xs:element type="factors16Type" name="factors16"/>
+      <xs:element type="factors17Type" name="factors17"/>
+      <xs:element type="factors18Type" name="factors18"/>
+      <xs:element type="factors19Type" name="factors19"/>
+      <xs:element type="factors20Type" name="factors20"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="doType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="ip_opo"/>
+      <xs:element type="xs:string" name="prognoz_ip_opo"/>
+      <xs:element type="xs:string" name="status"/>
+      <xs:element type="factorsType" name="factors"/>
+      <xs:element type="xs:string" name="date"/>
+      <xs:element type="xs:string" name="time"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+  </xs:complexType>
+</xs:schema>

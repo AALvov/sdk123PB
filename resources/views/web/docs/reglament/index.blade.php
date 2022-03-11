@@ -16,5 +16,6 @@
 <div class="inside_content">
     @livewire('docs.reglament')
 </div>
-
+{{--@include('web.include.script-lib.updateOpoParams')--}}
+{{--Эта страница не работает, надо разобраться, пишет, что ошибка в БД--}}
 @endsection

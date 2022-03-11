@@ -1,0 +1,26 @@
+<BusinessMessage version="1" fileName="string">
+  <HeaderSection>
+    <Sender id="ГП ТГ Н.Новгород"/>
+    <Receiver id="М АСДУ ЕСГ"/>
+    <Generated at="2013-11-23T18:44:07"/>
+    <!--Optional:-->
+    <Comment>string</Comment>
+    <ReferenceTime time="2014-06-09T19:15:04+04:00"/>
+    <Scale>PT5M</Scale>
+    <Template id="string"/>
+    <!--Optional:-->
+    <Delivery id="string"/>
+  </HeaderSection>
+  <!--1 or more repetitions:-->
+  <DataSection>
+    <Identifier type="string">string</Identifier>
+    <!--Optional:-->
+    <ParameterFullName>string</ParameterFullName>
+    <Value>1000.00</Value>
+    <!--Optional:-->
+    <Source>2</Source>
+    <Time>2009-05-16T16:42:28</Time>
+    <!--Optional:-->
+    <Dimension>кг/см2</Dimension>
+  </DataSection>
+</BusinessMessage>

@@ -16,5 +16,6 @@
 <div class="inside_content">
     @livewire('calendar-type')
 </div>
+@include('web.include.script-lib.updateOpoParams')
 
 @endsection

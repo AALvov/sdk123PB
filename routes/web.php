@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Auth;
 //Групировка от бана
 //Route::group(['middleware' => 'forbid-banned-user',], function () {
 Route::group(['middleware' => ['auth']], function() {
-    Route::group(['middleware' => ['restrictedToDayLight']], function() {
+
+//    Route::group(['middleware' => ['restrictedToDayLight']], function() {
     Route::get('/', ['as' => 'gazprom', 'uses' => 'MenuController@view_menu']);   //Главная
 
 
@@ -468,7 +469,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/opo/{opo_id}/maintenances', 'MaintenanceCalendarController@index_opo');
 
 });
-});
+//});
 //*******************************************
 Auth::routes();
 Route::get('/logout', function () {    Auth::logout();    return Redirect::to('login');});

@@ -15,4 +15,6 @@
 <div class="inside_content">
     @livewire('docs.danger-events')
 </div>
+@include('web.include.script-lib.updateOpoParams')
+
 @endsection

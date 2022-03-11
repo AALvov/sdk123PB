@@ -131,7 +131,7 @@
             {
                 $('#delta_ip').text(data['raznost'])
                 if (data['check'] == 1){
-                    document.getElementById('delta_ip').style.color='#49ce56'
+                    document.getElementById('del    ta_ip').style.color='#49ce56'
                     document.getElementById('good').type="image"
                     document.getElementById('good').style.maxHeight="15px"
                     document.getElementById('bad').type="hidden"
@@ -227,23 +227,24 @@
                 sidebar_rounded.html(sidebar_html);
 
 
-                $('#min_ip_of_opo').text(data['min_last'])
-                var window = document.getElementById('min_ip_of_opo')
-                if (data['min_last'] <= 1.00) {
-                    $('#min_ip_of_opo').backgroundColor="#49ce56";
-                    window.style.backgroundColor = "#49ce56";
-                }
-                if (data['min_last'] <= 0.80) {
-                    window.style.backgroundColor = "#ffca45";
-                }
-                if (data['min_last'] <= 0.50) {
-                    window.style.backgroundColor = "#f58b2c";
-                }
-                if (data['min_last'] <= 0.20) {
-                    window.style.backgroundColor = "#f26161";
-                }
+                // $('#min_ip_of_opo').text(data['min_last'])
+                // var window = document.getElementById('min_ip_of_opo')
+                // if (data['min_last'] <= 1.00) {
+                //     $('#min_ip_of_opo').backgroundColor="#49ce56";
+                //     window.style.backgroundColor = "#49ce56";
+                // }
+                // if (data['min_last'] <= 0.80) {
+                //     window.style.backgroundColor = "#ffca45";
+                // }
+                // if (data['min_last'] <= 0.50) {
+                //     window.style.backgroundColor = "#f58b2c";
+                // }
+                // if (data['min_last'] <= 0.20) {
+                //     window.style.backgroundColor = "#f26161";
+                // }
             }
         })
+
     }
 
     $(document).ready(function (){
@@ -252,10 +253,11 @@
     })
 </script>
 
-
+@include('web.include.script-lib.updateOpoParams')
 
 
 <script>
+
     function sleep(sec) {
         return new Promise(resolve => setTimeout(resolve, sec*1000));
     }
@@ -271,131 +273,99 @@
         while(true){
             var GetDataReq=new XMLHttpRequest();
             let count=0
-             GetDataReq.onreadystatechange =function() {
-                 if (GetDataReq.readyState == 4 && GetDataReq.status == 200) {
-                     let p_value='value ';
-                     let arr=[]
-                     arr=JSON.parse(GetDataReq.responseText);//Принимаем данные в json
-                     if (arr['new_data']) {
-                         count = arr['db_count'];
-                         document.getElementById('ip_opo').innerHTML = arr['ip_opo'];
+            GetDataReq.onreadystatechange =function() {
+                if (GetDataReq.readyState == 4 && GetDataReq.status == 200) {
+                    let p_value='value ';
+                    let arr=[]
+                    arr=JSON.parse(GetDataReq.responseText);//Принимаем данные в json
+                    if (arr['new_data']) {
+                        count = arr['db_count'];
+                        document.getElementById('ip_opo').innerHTML = arr['ip_opo'];
 
 
-                         if (arr['mins_opos_int_status'] == 1) {
-                             p_value += 'good'
-                         } else if (arr['mins_opos_int_status'] == 2) {
-                             p_value += 'normal'
-                         } else if (arr['mins_opos_int_status'] == 3) {
-                             p_value += 'bad'
-                         } else p_value += 'critical'
+                        if (arr['mins_opos_int_status'] == 1) {
+                            p_value += 'good'
+                        } else if (arr['mins_opos_int_status'] == 2) {
+                            p_value += 'normal'
+                        } else if (arr['mins_opos_int_status'] == 3) {
+                            p_value += 'bad'
+                        } else p_value += 'critical'
 
 
-                         mins_opos_status.className = p_value;
-                         mins_opos_status.textContent = arr['mins_opos_status'];
-                         document.getElementById('div_mins_opos_status').appendChild(mins_opos_status);
-                         // document.getElementById('mins_opos_ip_opo').innerHTML = arr['mins_opos_ip_opo'];
+                        mins_opos_status.className = p_value;
+                        mins_opos_status.textContent = arr['mins_opos_status'];
+                        document.getElementById('div_mins_opos_status').appendChild(mins_opos_status);
+                        // document.getElementById('mins_opos_ip_opo').innerHTML = arr['mins_opos_ip_opo'];
 
-                         p_value = 'value '
-                         if (arr['mins_opo_months_int_status'] == 1) {
-                             p_value += 'good'
-                         } else if (arr['mins_opo_months_int_status'] == 2) {
-                             p_value += 'normal'
-                         } else if (arr['mins_opo_months_int_status'] == 3) {
-                             p_value += 'bad'
-                         } else p_value += 'critical'
+                        p_value = 'value '
+                        if (arr['mins_opo_months_int_status'] == 1) {
+                            p_value += 'good'
+                        } else if (arr['mins_opo_months_int_status'] == 2) {
+                            p_value += 'normal'
+                        } else if (arr['mins_opo_months_int_status'] == 3) {
+                            p_value += 'bad'
+                        } else p_value += 'critical'
 
-                         mins_opo_mounths_status.className = p_value
-                         mins_opo_mounths_status.textContent = arr['mins_opo_months_status']
-                         document.getElementById('div_mins_opo_months_status').appendChild(mins_opo_mounths_status);
-                         // document.getElementById('mins_opo_months_ip_opo').innerHTML = arr['mins_opo_months_ip_opo']
+                        mins_opo_mounths_status.className = p_value
+                        mins_opo_mounths_status.textContent = arr['mins_opo_months_status']
+                        document.getElementById('div_mins_opo_months_status').appendChild(mins_opo_mounths_status);
+                        // document.getElementById('mins_opo_months_ip_opo').innerHTML = arr['mins_opo_months_ip_opo']
 
-                         p_value = 'value '
-                         if (arr['mins_opo_year_int_status'] == 1) {
-                             p_value += 'good'
-                         } else if (arr['mins_opo_year_int_status'] == 2) {
-                             p_value += 'normal'
-                         } else if (arr['mins_opo_year_int_status'] == 3) {
-                             p_value += 'bad'
-                         } else p_value += 'critical'
+                        p_value = 'value '
+                        if (arr['mins_opo_year_int_status'] == 1) {
+                            p_value += 'good'
+                        } else if (arr['mins_opo_year_int_status'] == 2) {
+                            p_value += 'normal'
+                        } else if (arr['mins_opo_year_int_status'] == 3) {
+                            p_value += 'bad'
+                        } else p_value += 'critical'
 
-                         mins_opo_year_status.className = p_value
-                         mins_opo_year_status.textContent = arr['mins_opo_year_status']
-                         document.getElementById('div_mins_opo_year_status').appendChild(mins_opo_year_status);
-                         // document.getElementById('mins_opo_year_ip_opo').innerHTML = arr['mins_opo_year_ip_opo']
+                        mins_opo_year_status.className = p_value
+                        mins_opo_year_status.textContent = arr['mins_opo_year_status']
+                        document.getElementById('div_mins_opo_year_status').appendChild(mins_opo_year_status);
+                        // document.getElementById('mins_opo_year_ip_opo').innerHTML = arr['mins_opo_year_ip_opo']
 
-                         let progress_bars = document.getElementsByClassName('progress-bar');
-                         let sidebars = document.getElementById('sidebar_bottom_rounded').getElementsByClassName('bold dark_grey_text clear');
-                         //sidebar_bottom_rounded.getElementsByClassName('bold dark_grey_text clear').item(i).innerHTML=arr['all_opo_ip'][i];
+                        let progress_bars = document.getElementsByClassName('progress-bar');
+                        let sidebars = document.getElementById('sidebar_bottom_rounded').getElementsByClassName('bold dark_grey_text clear');
+                        //sidebar_bottom_rounded.getElementsByClassName('bold dark_grey_text clear').item(i).innerHTML=arr['all_opo_ip'][i];
 
-                         arr['all_opo_ip'].forEach(function (item, i) {
-                             sidebars.item(i).innerHTML = item;
-                             let progressbar_className = 'progress-bar '
-                             if (item <= 0.2) {
-                                 progressbar_className += 'bg-danger'
-                             } else if (item > 0.2 && item <= 0.5) {
-                                 progressbar_className += 'bg-warning'
-                             } else if (item > 0.5 && item <= 0.8) {
-                                 progressbar_className += 'bg-risk'
-                             } else if (item > 0.8 && item <= 1) {
-                                 progressbar_className += 'bg-success'
-                             }
-                             progress_bars.item(i).className = progressbar_className;
-                             progress_bars.item(i).style = "width: " + item * 100 + '%';
-                         });
-                         //arr['opo'].forEach(function(item, i){
-                         {{--let div_sidebar_bottom_single=document.createElement('div');--}}
-                         {{--if (item['idOPO']==arr['id']){--}}
-                         {{--    div_sidebar_bottom_single.className='sidebar_bottom_single active'--}}
-                         {{--}--}}
-                         {{--else{--}}
-                         {{--    div_sidebar_bottom_single.className='sidebar_bottom_single'--}}
-                         {{--}--}}
-
-                         {{--let div_clear=document.createElement('div');--}}
-                         {{--div_clear.className="clear";--}}
-
-                         {{--let div_single_fond_name=document.createElement('div');--}}
-                         {{--div_single_fond_name.className='single_fond_name rounded';--}}
-
-                         {{--let light_blue_text=document.createElement('a');--}}
-                         {{--light_blue_text.className='light_blue_text';--}}
-                         {{--light_blue_text.href='/opo/'+item['idOPO'];--}}
-                         {{--light_blue_text.text=item['descOPO'];--}}
-
-                         {{--let local_clear_a=document.createElement('a');--}}
-                         {{--local_clear_a.href='/opo/'+item['idOPO']+'/plan';--}}
-
-                         {{--let img_settings=document.createElement('img');--}}
-                         {{--img_settings.src={{asset('assets/images/icons/settings.svg')}};--}}
-                         {{--local_clear_a.appendChild(img_settings);--}}
-
-                         {{--let p_grey_text=document.--}}
+                        arr['all_opo_ip'].forEach(function (item, i) {
+                            sidebars.item.innerHTML = item;
+                            let progressbar_className = 'progress-bar '
+                            if (item <= 0.2) {
+                                progressbar_className += 'bg-danger'
+                            } else if (item > 0.2 && item <= 0.5) {
+                                progressbar_className += 'bg-warning'
+                            } else if (item > 0.5 && item <= 0.8) {
+                                progressbar_className += 'bg-risk'
+                            } else if (item > 0.8 && item <= 1) {
+                                progressbar_className += 'bg-success'
+                            }
+                            progress_bars.item.className = progressbar_className;
+                            progress_bars.item.style = "width: " + item * 100 + '%';
+                        });
+                        let footer_table = document.getElementById('footer_table');
+                        let footer_table_date = footer_table.getElementsByClassName('td_date');
+                        let footer_table_status = footer_table.getElementsByClassName('td_status');
+                        let footer_table_opo = footer_table.getElementsByClassName('td_opo');
+                        let footer_table_element = footer_table.getElementsByClassName('td_element');
+                        let footer_table_number = footer_table.getElementsByClassName('td_number');
+                        let footer_table_event = footer_table.getElementsByClassName('td_event');
+                        arr['jas_opo'].forEach(function (item, i) {
+                            if (item.length!=0) {
+                                footer_table_date.item(i).innerHTML = item['date'];
+                                footer_table_status.item(i).innerHTML = item['level'];
+                                footer_table_opo.item(i).innerHTML = item['descOPO'];
+                                footer_table_element.item(i).innerHTML = item['nameObj'] + 'Элемент объекта ОПО ' + item['descOPO'];
+                                footer_table_number.item(i).innerHTML = item['status'];
+                                footer_table_event.item(i).innerHTML = item['name'];
+                            }
 
 
-                         //});
-
-                         let footer_table = document.getElementById('footer_table');
-                         let footer_table_date = footer_table.getElementsByClassName('td_date');
-                         let footer_table_status = footer_table.getElementsByClassName('td_status');
-                         let footer_table_opo = footer_table.getElementsByClassName('td_opo');
-                         let footer_table_element = footer_table.getElementsByClassName('td_element');
-                         let footer_table_number = footer_table.getElementsByClassName('td_number');
-                         let footer_table_event = footer_table.getElementsByClassName('td_event');
-                         arr['jas_opo'].forEach(function (item, i) {
-                             if (item.length!=0) {
-                                 footer_table_date.item(i).innerHTML = item['date'];
-                                 footer_table_status.item(i).innerHTML = item['level'];
-                                 footer_table_opo.item(i).innerHTML = item['descOPO'];
-                                 footer_table_element.item(i).innerHTML = item['nameObj'] + 'Элемент объекта ОПО ' + item['descOPO'];
-                                 footer_table_number.item(i).innerHTML = item['status'];
-                                 footer_table_event.item(i).innerHTML = item['name'];
-                             }
-
-
-                         });
-                     }
-                 }
-             };
+                        });
+                    }
+                }
+            };
             //
             GetDataReq.open("GET", location.pathname+'/data/'+count.toString(), true);
             GetDataReq.send();

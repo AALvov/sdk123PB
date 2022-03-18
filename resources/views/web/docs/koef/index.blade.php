@@ -16,6 +16,6 @@
 <div class="inside_content">
     @livewire('calc-koef')
 </div>
-@include('web.include.script-lib.updateOpoParams')
+
 
 @endsection

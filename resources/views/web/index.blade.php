@@ -253,7 +253,7 @@
     })
 </script>
 
-@include('web.include.script-lib.updateOpoParams')
+
 
 
 <script>

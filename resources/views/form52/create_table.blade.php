@@ -96,6 +96,6 @@
     </div>
     </div>
     @include('web.include.modal.datapicker')
-    @include('web.include.script-lib.updateOpoParams')
+
 
 @endsection
